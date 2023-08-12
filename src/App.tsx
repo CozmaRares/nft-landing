@@ -1,4 +1,8 @@
-import desktop from "./assets/desktop.png";
+import desktop from "./assets/images/desktop.png";
+import techCrunch from "./assets/logos/TechCrunch.png";
+import fastCompany from "./assets/logos/Fast Company.png";
+import mit from "./assets/logos/MIT.png";
+import forbes from "./assets/logos/Forbes.png";
 
 import Button from "./components/Button";
 import Section from "./components/Section";
@@ -6,8 +10,9 @@ import Section from "./components/Section";
 const App = () => {
   return (
     <div className="bg-midnightBlue text-white">
-      <div className="w-[65vw] mx-auto">
+      <div className="w-[65vw] mx-auto space-y-24">
         <Hero />
+        <Logos />
       </div>
     </div>
   );
@@ -41,6 +46,28 @@ const Hero = () => {
         </div>
       </div>
     </Section>
+  );
+};
+
+const Logos = () => {
+  return (
+    <section>
+      <p className="uppercase pb-2">featured on</p>
+      <ul className="flex flex-row justify-between bg-lavenderBlue/20 p-8 rounded-lg">
+        <li>
+          <img src={techCrunch} alt="TechCrunch logo" />
+        </li>
+        <li>
+          <img src={fastCompany} alt="Fast Company logo" />
+        </li>
+        <li>
+          <img src={mit} alt="MIT logo" />
+        </li>
+        <li>
+          <img src={forbes} alt="Forbes logo" />
+        </li>
+      </ul>
+    </section>
   );
 };
 
