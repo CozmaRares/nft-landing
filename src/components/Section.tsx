@@ -10,12 +10,12 @@ const Section: React.FC<
       alt: string;
     };
     reverse?: boolean;
-  } & InferProps<[typeof SectionInner]>
+  } & InferProps<[typeof InnerSection]>
 > = props => (
   <section className="grid grid-cols-2 items-center">
-    <SectionInner
+    <InnerSection
       {...props}
-      className={props.reverse ? "order-last" : ""}
+      className={tw(props.className, props.reverse ? "order-last" : "")}
     />
     <div>
       <img
@@ -27,7 +27,7 @@ const Section: React.FC<
   </section>
 );
 
-const SectionInner: React.FC<{
+const InnerSection: React.FC<{
   className?: string;
   heading: string | ReactNode;
   subHeading: string | ReactNode;
@@ -35,20 +35,22 @@ const SectionInner: React.FC<{
   button: ButtonProps | ReactNode;
 }> = ({ className, heading, subHeading, description, button }) => (
   <div className={tw("space-y-6", className)}>
-    {typeof subHeading != "string" ? (
-      subHeading
-    ) : (
-      <h3 className="font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua">
-        {subHeading}
-      </h3>
-    )}
-    {typeof heading != "string" ? (
-      heading
-    ) : (
-      <h2 className="font-outfit text-6xl font-bold capitalize leading-[110%]">
-        {heading}
-      </h2>
-    )}
+    <div>
+      {typeof subHeading != "string" ? (
+        subHeading
+      ) : (
+        <h3 className="font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua">
+          {subHeading}
+        </h3>
+      )}
+      {typeof heading != "string" ? (
+        heading
+      ) : (
+        <h2 className="font-outfit text-6xl font-bold capitalize leading-[110%]">
+          {heading}
+        </h2>
+      )}
+    </div>
     {typeof description != "string" ? (
       description
     ) : (
