@@ -1,6 +1,6 @@
 import { twMerge as tw } from "tailwind-merge";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = (props) => (
     <button

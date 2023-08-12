@@ -25,8 +25,8 @@ const Hero = () => {
         src: desktop,
         alt: "A desktop displaying the skeletion of an analytics page",
       }}
-    >
-      <div className="space-y-6">
+      subHeading={null}
+      heading={
         <h1 className="font-outfit font-bold text-7xl capitalize leading-[110%]">
           <p>discover</p>
           <p>and collect</p>
@@ -34,18 +34,19 @@ const Hero = () => {
             <span className="text-lavenderBlue">rare</span> NFTs
           </p>
         </h1>
-        <p className="w-2/3 font-roboto text-xl">
-          The most secure marketplace for buying and selling unique crypto
-          assets.
-        </p>
+      }
+      description={
+        "The most secure marketplace for buying and selling unique crypto assets."
+      }
+      button={
         <div className="grid grid-cols-2 gap-8">
           <Button>buy NFTs</Button>
           <Button className="bg-transparent border-[3px] border-lavenderBlue">
             sell NFTs
           </Button>
         </div>
-      </div>
-    </Section>
+      }
+    />
   );
 };
 
