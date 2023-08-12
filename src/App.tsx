@@ -12,7 +12,7 @@ import Section from "./components/Section";
 const App = () => {
   return (
     <div className="bg-midnightBlue text-white">
-      <div className="w-[65vw] mx-auto space-y-24">
+      <div className="mx-auto w-[65vw] space-y-24">
         <Hero />
         <Logos />
         <Analytics />
@@ -25,11 +25,11 @@ const Hero = () => (
   <Section
     img={{
       src: desktop,
-      alt: "A desktop displaying the skeletion of an analytics page",
+      alt: "A desktop displaying the skeleton of an analytics page",
     }}
     subHeading={null}
     heading={
-      <h1 className="font-outfit font-bold text-7xl capitalize leading-[110%]">
+      <h1 className="font-outfit text-7xl font-bold capitalize leading-[110%]">
         discover and collect <span className="text-lavenderBlue">rare</span>{" "}
         NFTs
       </h1>
@@ -40,7 +40,7 @@ const Hero = () => (
     button={
       <div className="grid grid-cols-2 gap-8">
         <Button>buy NFTs</Button>
-        <Button className="bg-transparent border-[3px] border-lavenderBlue">
+        <Button className="border-[3px] border-lavenderBlue bg-transparent">
           sell NFTs
         </Button>
       </div>
@@ -50,19 +50,31 @@ const Hero = () => (
 
 const Logos = () => (
   <section>
-    <p className="uppercase pb-2">featured on</p>
-    <ul className="flex flex-row justify-between bg-lavenderBlue/20 p-8 rounded-lg">
+    <p className="pb-2 uppercase">featured on</p>
+    <ul className="flex flex-row justify-between rounded-lg bg-lavenderBlue/20 p-8">
       <li>
-        <img src={techCrunch} alt="TechCrunch logo" />
+        <img
+          src={techCrunch}
+          alt="TechCrunch logo"
+        />
       </li>
       <li>
-        <img src={fastCompany} alt="Fast Company logo" />
+        <img
+          src={fastCompany}
+          alt="Fast Company logo"
+        />
       </li>
       <li>
-        <img src={mit} alt="MIT logo" />
+        <img
+          src={mit}
+          alt="MIT logo"
+        />
       </li>
       <li>
-        <img src={forbes} alt="Forbes logo" />
+        <img
+          src={forbes}
+          alt="Forbes logo"
+        />
       </li>
     </ul>
   </section>
