@@ -1,5 +1,7 @@
 import desktop from "./assets/images/desktop.png";
 import inbox from "./assets/images/inbox.png";
+import phone from "./assets/images/phone.png";
+import servers from "./assets/images/servers.png";
 
 import techCrunch from "./assets/logos/TechCrunch.png";
 import fastCompany from "./assets/logos/Fast Company.png";
@@ -9,13 +11,15 @@ import forbes from "./assets/logos/Forbes.png";
 import Button from "./components/Button";
 import Section from "./components/Section";
 
-const App = () => {
+const Home = () => {
   return (
     <div className="bg-midnightBlue text-white">
       <div className="mx-auto w-[65vw] space-y-24">
         <Hero />
         <Logos />
         <Analytics />
+        <App />
+        <Support />
       </div>
     </div>
   );
@@ -96,4 +100,35 @@ const Analytics = () => (
   />
 );
 
-export default App;
+const App = () => (
+  <Section
+    img={{
+      src: phone,
+      alt: "",
+    }}
+    heading={"browse nfts from your smartphone "}
+    subHeading={"get our app"}
+    description={
+      "Our Krypto app is the easiest way to keep track of your assets when you’re on the go."
+    }
+    button={{ children: "download app", className: "w-2/3" }}
+  />
+);
+
+const Support = () => (
+  <Section
+    img={{
+      src: servers,
+      alt: "",
+    }}
+    reverse
+    heading={"sell your NFTs from Anywhere at any time"}
+    subHeading={"24/7 access"}
+    description={
+      "With our easy-to-use platform, you can buy or sell assets from anywhere in the world, at any time."
+    }
+    button={{ children: "get started", className: "w-2/3" }}
+  />
+);
+
+export default Home;
