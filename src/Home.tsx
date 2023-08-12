@@ -2,6 +2,9 @@ import desktop from "./assets/images/desktop.png";
 import inbox from "./assets/images/inbox.png";
 import phone from "./assets/images/phone.png";
 import servers from "./assets/images/servers.png";
+import pfp1 from "./assets/profile/pfp1.png";
+import pfp2 from "./assets/profile/pfp2.png";
+import pfp3 from "./assets/profile/pfp3.png";
 
 import techCrunch from "./assets/logos/TechCrunch.png";
 import fastCompany from "./assets/logos/Fast Company.png";
@@ -20,6 +23,7 @@ const Home = () => {
         <Analytics />
         <App />
         <Support />
+        <Testimonials />
       </div>
     </div>
   );
@@ -109,7 +113,7 @@ const App = () => (
     heading={"browse nfts from your smartphone "}
     subHeading={"get our app"}
     description={
-      "Our Krypto app is the easiest way to keep track of your assets when you’re on the go."
+      "Our Krypto app is the easiest way to keep track of your assets when you're on the go."
     }
     button={{ children: "download app", className: "w-2/3" }}
   />
@@ -130,5 +134,59 @@ const Support = () => (
     button={{ children: "get started", className: "w-2/3" }}
   />
 );
+
+const Testimonials = () => {
+  const Card: React.FC<{ picture: string; name: string; text: string }> = ({
+    picture,
+    name,
+    text,
+  }) => (
+    <div className="bg-darkIndigo p-5 rounded-xl">
+      <img
+        src={picture}
+        alt={`${name}'s profile picture`}
+        className="mx-auto aspect-square rounded-full"
+      />
+      <h4 className="mt-2 mb-4 font-outfit text-xl font-semibold uppercase text-paleAqua">
+        {name}
+      </h4>
+      <p>{text}</p>
+    </div>
+  );
+
+  return (
+    <section className="text-center">
+      <h3 className="font-outfit text-xl font-semibold uppercase">
+        testimonials
+      </h3>
+      <h2 className="mb-8 font-outfit text-6xl font-bold capitalize">
+        read what others to say
+      </h2>
+      <div className="grid grid-cols-3 gap-8">
+        <Card
+          picture={pfp1}
+          name={"Olivia Cole"}
+          text={
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas minima dolor quasi asperiores nulla totam soluta voluptates excepturi, neque obcaecati dolores dicta eum doloribus sed vel? Eveniet possimus ducimus earum!"
+          }
+        />
+        <Card
+          picture={pfp2}
+          name={"Evan White"}
+          text={
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis exercitationem distinctio voluptate at illum."
+          }
+        />
+        <Card
+          picture={pfp3}
+          name={"Jessica Page"}
+          text={
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quas explicabo voluptates saepe, culpa quasi optio. Rem id deserunt assumenda!"
+          }
+        />
+      </div>
+    </section>
+  );
+};
 
 export default Home;
