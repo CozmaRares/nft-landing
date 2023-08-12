@@ -30,23 +30,23 @@ const SectionInner: React.FC<{
     subHeading: string | ReactNode;
     description: string | ReactNode;
     button: ButtonProps | ReactNode;
-}> = ({ className, heading, subHeading, description, button }) => {
-    console.log();
-    return (
-        <div className={tw("space-y-6", className)}>
-            {typeof subHeading != "string" ? subHeading : <h3>{subHeading}</h3>}
-            {typeof heading != "string" ? heading : <h2>{heading}</h2>}
-            {typeof description != "string" ? (
-                description
-            ) : (
-                <p className="w-2/3 font-roboto text-xl"> {description} </p>
-            )}
-            {isValidElement(button) ? (
-                button
-            ) : (
-                <Button {...(button as ButtonProps)} />
-            )}
-        </div>
-    );
-};
+}> = ({ className, heading, subHeading, description, button }) => (
+    <div className={tw("space-y-6", className)}>
+        {typeof subHeading != "string" ? (
+            subHeading
+        ) : (
+            <h3 className="font-outfit font-semibold text-xl uppercase text-paleAqua tracking-widest">
+                {subHeading}
+            </h3>
+        )}
+        {typeof heading != "string" ? heading : <h2 className="font-outfit font-bold text-6xl leading-[110%] capitalize">{heading}</h2>}
+        {typeof description != "string" ? (
+            description
+        ) : (
+            <p className="w-5/6 font-roboto text-xl">{description}</p>
+        )}
+        {isValidElement(button) ? button : <Button {...(button as ButtonProps)} />}
+    </div>
+);
+
 export default Section;
