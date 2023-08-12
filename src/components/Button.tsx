@@ -6,7 +6,7 @@ const Button: React.FC<ButtonProps> = (props) => (
     <button
         {...props}
         className={tw(
-            "block bg-lavenderBlue font-outfit font-semibold text-xl uppercase py-4 px-16 rounded-full",
+            "block bg-lavenderBlue font-outfit font-semibold text-xl uppercase p-4 rounded-full",
             props.className
         )}
     >

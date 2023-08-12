@@ -1,6 +1,7 @@
 import desktop from "./assets/desktop.png";
 
 import Button from "./components/Button";
+import Section from "./components/Section";
 
 const App = () => {
   return (
@@ -14,7 +15,12 @@ const App = () => {
 
 const Hero = () => {
   return (
-    <section className="grid grid-cols-2 items-center">
+    <Section
+      img={{
+        src: desktop,
+        alt: "A desktop displaying the skeletion of an analytics page",
+      }}
+    >
       <div className="space-y-6">
         <h1 className="font-outfit font-bold text-7xl capitalize leading-[110%]">
           <p>discover</p>
@@ -27,21 +33,14 @@ const Hero = () => {
           The most secure marketplace for buying and selling unique crypto
           assets.
         </p>
-        <div className="flex flex-row gap-[10%]">
+        <div className="grid grid-cols-2 gap-8">
           <Button>buy NFTs</Button>
           <Button className="bg-transparent border-[3px] border-lavenderBlue">
             sell NFTs
           </Button>
         </div>
       </div>
-      <div>
-        <img
-          src={desktop}
-          alt="A desktop displaying the skeletion of an analytics page"
-          className="mx-auto"
-        />
-      </div>
-    </section>
+    </Section>
   );
 };
 
