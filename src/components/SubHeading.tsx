@@ -6,7 +6,7 @@ const SubHeading: React.FC<{ text: string; className?: string }> = ({
 }) => (
   <h3
     className={tw(
-      "font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua",
+      "text-md font-outfit font-semibold uppercase tracking-widest text-paleAqua md:text-xl",
       className,
     )}
   >

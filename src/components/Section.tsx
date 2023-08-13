@@ -23,7 +23,7 @@ const Section: React.FC<
       <img
         src={props.img.src}
         alt={props.img.alt}
-        className="mx-auto max-h-[450px]"
+        className="mx-auto max-h-[450px] w-3/5"
       />
     </div>
   </section>
@@ -36,7 +36,12 @@ const InnerSection: React.FC<{
   description: string | ReactNode;
   button: ButtonProps | ReactNode;
 }> = ({ className, heading, subHeading, description, button }) => (
-  <div className={tw("w-2/3 space-y-6 lg:w-full", className)}>
+  <div
+    className={tw(
+      "space-y-6 text-center md:w-2/3 md:text-left lg:w-full",
+      className,
+    )}
+  >
     <div className="flex flex-col-reverse">
       {typeof heading != "string" ? heading : <Heading text={heading} />}
       {typeof subHeading != "string" ? (
@@ -48,9 +53,16 @@ const InnerSection: React.FC<{
     {typeof description != "string" ? (
       description
     ) : (
-      <p className="w-5/6 font-roboto text-xl">{description}</p>
+      <p className="mx-auto w-5/6 font-roboto text-xl md:mx-0">{description}</p>
     )}
-    {isValidElement(button) ? button : <Button {...(button as ButtonProps)} />}
+    {isValidElement(button) ? (
+      button
+    ) : (
+      <Button
+        {...(button as ButtonProps)}
+        className={tw("mx-auto md:mx-0", (button as ButtonProps).className)}
+      />
+    )}
   </div>
 );
 

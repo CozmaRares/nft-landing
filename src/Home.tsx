@@ -16,13 +16,16 @@ import Section from "./components/Section";
 import SubHeading from "./components/SubHeading";
 import Heading from "./components/Heading";
 import Link from "./components/Link";
+import { ReactNode, useState } from "react";
+import { twMerge as tw } from "tailwind-merge";
 
-const GRADIENT = "bg-gradient-to-br from-[#8080D7] to-[#AAD9D9]";
+const GRADIENT =
+  "bg-gradient-to-br from-[#8080D7] via-[#95ACD8] via-60% to-[#AAD9D9]";
 
 const Home = () => {
   return (
     <main className="bg-midnightBlue text-white">
-      <div className="mx-auto  w-[95vw] max-w-[1000px] space-y-24 py-4">
+      <div className="mx-auto w-[95vw] max-w-[1000px] space-y-24 py-4">
         <NavBar />
         <Hero />
         <Logos />
@@ -38,27 +41,43 @@ const Home = () => {
   );
 };
 
-const NavBar = () => (
-  <aside className="grid grid-cols-2 font-outfit text-xl font-bold">
-    <div className="uppercase">krypto</div>
-    <ul className="flex flex-row justify-between">
-      <li>
-        <Link>about</Link>
-      </li>
-      <li>
-        <Link>pricing</Link>
-      </li>
-      <li>
-        <Link>contact</Link>
-      </li>
-      <li>
-        <Link className="rounded-full bg-lavenderBlue px-6 py-2 after:content-none">
-          buy nfts
-        </Link>
-      </li>
-    </ul>
-  </aside>
-);
+const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <aside className="navbar">
+      <div>krypto</div>
+      <button
+        className={`hamburger-button ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(prev => !prev)}
+      >
+        <p>{isOpen ? "Close" : "Open"} Menu</p>
+        <div>
+          <div className="bar bar1"></div>
+          <div className="bar bar2"></div>
+          <div className="bar bar3"></div>
+        </div>
+      </button>
+      <ul
+        className={`hamburger-menu ${isOpen ? "open" : ""}`}
+        aria-expanded={isOpen}
+      >
+        <li>
+          <Link>about</Link>
+        </li>
+        <li>
+          <Link>pricing</Link>
+        </li>
+        <li>
+          <Link>contact</Link>
+        </li>
+        <li>
+          <Link>buy nfts</Link>
+        </li>
+      </ul>
+    </aside>
+  );
+};
 
 const Hero = () => (
   <Section
@@ -68,7 +87,7 @@ const Hero = () => (
     }}
     subHeading={null}
     heading={
-      <h1 className="font-outfit text-6xl font-bold capitalize leading-[110%] lg:text-7xl">
+      <h1 className="font-outfit text-5xl font-bold capitalize leading-[110%] md:text-6xl lg:text-7xl">
         discover and collect <span className="text-lavenderBlue">rare</span>{" "}
         NFTs
       </h1>
@@ -90,7 +109,7 @@ const Hero = () => (
 const Logos = () => (
   <section>
     <p className="pb-2 uppercase">featured on</p>
-    <ul className="flex flex-row justify-between rounded-lg bg-lavenderBlue/20 p-8">
+    <ul className="flex flex-row justify-between gap-6 rounded-lg bg-lavenderBlue/20 p-8">
       <li>
         <img
           src={techCrunch}
@@ -186,7 +205,7 @@ const Testimonials = () => {
   );
 
   return (
-    <section className="mx-auto w-3/5 text-center lg:w-full">
+    <section className="mx-auto w-4/5 text-center md:w-3/5 lg:w-full">
       <SubHeading
         text="testimonials"
         className="text-white"
@@ -217,7 +236,7 @@ const Testimonials = () => {
 };
 
 const CallToAction = () => (
-  <section className={`rounded-3xl p-16 text-center ${GRADIENT}`}>
+  <section className={`rounded-3xl p-8 text-center md:p-16 ${GRADIENT}`}>
     <div className="mx-auto w-3/5">
       <SubHeading
         text="are you ready?"
@@ -232,83 +251,112 @@ const CallToAction = () => (
   </section>
 );
 
-const Footer = () => (
-  <footer className="grid grid-cols-6 items-center gap-y-4 text-base">
-    <span className="font-outfit text-xl font-semibold uppercase">krypto</span>
-    <span className="font-outfit text-xl font-semibold">links</span>
-    <span className="font-outfit text-xl font-semibold">market</span>
-    <span className="font-outfit text-xl font-semibold">contact</span>
-    <span className="col-span-2 font-outfit text-xl font-semibold">
-      join our newsletter
-    </span>
-    <ul>
-      <li>
-        <Link>Privacy Policy</Link>
-      </li>
-      <li>
-        <Link>Terms of Service</Link>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <Link>Home</Link>
-      </li>
-      <li>
-        <Link>About</Link>
-      </li>
-      <li>
-        <Link>Pricing</Link>
-      </li>
-      <li>
-        <Link>App</Link>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <Link>Browse NFTs</Link>
-      </li>
-      <li>
-        <Link>Buy NFTs</Link>
-      </li>
-      <li>
-        <Link>Sell NFTs</Link>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <Link>Email</Link>
-      </li>
-      <li>
-        <Link>LinkedIn</Link>
-      </li>
-      <li>
-        <Link>Instagram</Link>
-      </li>
-      <li>
-        <Link>Twitter</Link>
-      </li>
-    </ul>
-    <div className="col-span-2 flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6">
-      <div className="relative">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          className="peer w-full bg-transparent text-white"
-          placeholder=" "
-        />
-        <label
-          htmlFor="email"
-          className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80"
-        >
-          Email Address
-        </label>
-      </div>
-      <button className="w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
-        submit
-      </button>
+const Footer = () => {
+  const FooterItem: React.FC<{
+    span: { text: string; className?: string };
+    children: ReactNode;
+    className?: string;
+  }> = ({ span, children, className }) => (
+    <div className={tw("border-b p-4 md:border-none", className)}>
+      <span
+        className={tw(
+          "mb-1 inline-block w-full font-outfit text-xl font-semibold md:mb-4",
+          span.className,
+        )}
+      >
+        {span.text}
+      </span>
+      {children}
     </div>
-  </footer>
-);
+  );
+
+  return (
+    <footer className="mx-auto grid w-1/2 text-center text-base md:w-full md:grid-cols-6 md:text-left">
+      <FooterItem span={{ text: "krypto", className: "uppercase" }}>
+        <ul>
+          <li>
+            <Link>Privacy Policy</Link>
+          </li>
+          <li>
+            <Link>Terms of Service</Link>
+          </li>
+        </ul>
+      </FooterItem>
+      <FooterItem
+        span={{ text: "links" }}
+        className="md:ml-3"
+      >
+        <ul>
+          <li>
+            <Link>Home</Link>
+          </li>
+          <li>
+            <Link>About</Link>
+          </li>
+          <li>
+            <Link>Pricing</Link>
+          </li>
+          <li>
+            <Link>App</Link>
+          </li>
+        </ul>
+      </FooterItem>
+      <FooterItem span={{ text: "market" }}>
+        <ul>
+          <li>
+            <Link>Browse NFTs</Link>
+          </li>
+          <li>
+            <Link>Buy NFTs</Link>
+          </li>
+          <li>
+            <Link>Sell NFTs</Link>
+          </li>
+        </ul>
+      </FooterItem>
+      <FooterItem span={{ text: "contact" }}>
+        <ul>
+          <li>
+            <Link>Email</Link>
+          </li>
+          <li>
+            <Link>LinkedIn</Link>
+          </li>
+          <li>
+            <Link>Instagram</Link>
+          </li>
+          <li>
+            <Link>Twitter</Link>
+          </li>
+        </ul>
+      </FooterItem>
+      <FooterItem
+        className="border-none md:col-span-2"
+        span={{ text: "join our newsletter" }}
+      >
+        <div className="mx-auto flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6 md:mx-0">
+          <div className="relative mr-2">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="peer w-full bg-transparent text-white"
+              placeholder=" "
+            />
+            <label
+              htmlFor="email"
+              className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80"
+            >
+              Email Address
+            </label>
+          </div>
+          <button className="w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
+            submit
+          </button>
+        </div>
+      </FooterItem>
+    </footer>
+  );
+};
 
 export default Home;
