@@ -13,6 +13,8 @@ import forbes from "./assets/logos/Forbes.png";
 
 import Button from "./components/Button";
 import Section from "./components/Section";
+import SubHeading from "./components/SubHeading";
+import Heading from "./components/Heading";
 
 const Home = () => {
   return (
@@ -24,6 +26,7 @@ const Home = () => {
         <App />
         <Support />
         <Testimonials />
+        <CallToAction />
       </div>
     </main>
   );
@@ -141,13 +144,13 @@ const Testimonials = () => {
     name,
     text,
   }) => (
-    <div className="bg-darkIndigo p-5 rounded-xl">
+    <div className="rounded-xl bg-darkIndigo p-5">
       <img
         src={picture}
         alt={`${name}'s profile picture`}
         className="mx-auto aspect-square rounded-full"
       />
-      <p className="mt-2 mb-4 font-outfit text-xl font-semibold uppercase text-paleAqua">
+      <p className="mb-4 mt-2 font-outfit text-xl font-semibold uppercase text-paleAqua">
         {name}
       </p>
       <p>{text}</p>
@@ -156,12 +159,14 @@ const Testimonials = () => {
 
   return (
     <section className="text-center">
-      <h3 className="font-outfit text-xl font-semibold uppercase">
-        testimonials
-      </h3>
-      <h2 className="mb-8 font-outfit text-6xl font-bold capitalize">
-        read what others to say
-      </h2>
+      <SubHeading
+        text="testimonials"
+        className="text-white"
+      />
+      <Heading
+        text="read what others to say"
+        className="mb-8"
+      />
       <div className="grid grid-cols-3 gap-8">
         <Card
           picture={pfp1}
@@ -188,5 +193,21 @@ const Testimonials = () => {
     </section>
   );
 };
+
+const CallToAction = () => (
+  <section className="rounded-3xl bg-gradient-to-br from-[#8080D7] to-[#AAD9D9] p-16 text-center">
+    <div className="mx-auto w-1/2">
+      <SubHeading
+        text="are you ready?"
+        className="text-black"
+      />
+      <Heading
+        text="be a part of the next big thing"
+        className="capitalize"
+      />
+      <Button className="mt-8 w-full bg-black">get started</Button>
+    </div>
+  </section>
+);
 
 export default Home;

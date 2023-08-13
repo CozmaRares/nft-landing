@@ -2,6 +2,8 @@ import { ReactNode, isValidElement } from "react";
 import { twMerge as tw } from "tailwind-merge";
 import InferProps from "../utils/InferProps";
 import Button, { ButtonProps } from "./Button";
+import Heading from "./Heading";
+import SubHeading from "./SubHeading";
 
 const Section: React.FC<
   {
@@ -36,19 +38,11 @@ const InnerSection: React.FC<{
 }> = ({ className, heading, subHeading, description, button }) => (
   <div className={tw("space-y-6", className)}>
     <div className="flex flex-col-reverse">
-      {typeof heading != "string" ? (
-        heading
-      ) : (
-        <h2 className="font-outfit text-6xl font-bold capitalize leading-[110%]">
-          {heading}
-        </h2>
-      )}
+      {typeof heading != "string" ? heading : <Heading text={heading} />}
       {typeof subHeading != "string" ? (
         subHeading
       ) : (
-        <h3 className="font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua">
-          {subHeading}
-        </h3>
+        <SubHeading text={subHeading} />
       )}
     </div>
     {typeof description != "string" ? (
