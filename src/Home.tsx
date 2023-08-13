@@ -15,11 +15,13 @@ import Button from "./components/Button";
 import Section from "./components/Section";
 import SubHeading from "./components/SubHeading";
 import Heading from "./components/Heading";
+import Link from "./components/Link";
 
 const Home = () => {
   return (
     <main className="bg-midnightBlue text-white">
       <div className="mx-auto w-[65vw] space-y-24">
+        <NavBar />
         <Hero />
         <Logos />
         <Analytics />
@@ -31,6 +33,26 @@ const Home = () => {
     </main>
   );
 };
+
+const NavBar = () => (
+  <aside className="grid grid-cols-2 pt-4 font-outfit text-xl font-bold">
+    <div className="uppercase">krypto</div>
+    <ul className="flex flex-row justify-between">
+      <li>
+        <Link href="#">about</Link>
+      </li>
+      <li>
+        <Link href="#">pricing</Link>
+      </li>
+      <li>
+        <Link href="#">contact</Link>
+      </li>
+      <li>
+        <Link href="#">buy nfts</Link>
+      </li>
+    </ul>
+  </aside>
+);
 
 const Hero = () => (
   <Section
