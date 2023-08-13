@@ -17,10 +17,12 @@ import SubHeading from "./components/SubHeading";
 import Heading from "./components/Heading";
 import Link from "./components/Link";
 
+const GRADIENT = "bg-gradient-to-br from-[#8080D7] to-[#AAD9D9]";
+
 const Home = () => {
   return (
     <main className="bg-midnightBlue text-white">
-      <div className="mx-auto w-[65vw] space-y-24">
+      <div className="mx-auto w-[65vw] space-y-24 py-4">
         <NavBar />
         <Hero />
         <Logos />
@@ -29,26 +31,30 @@ const Home = () => {
         <Support />
         <Testimonials />
         <CallToAction />
+        <Footer />
       </div>
+      <div className={`h-2 ${GRADIENT}`}></div>
     </main>
   );
 };
 
 const NavBar = () => (
-  <aside className="grid grid-cols-2 pt-4 font-outfit text-xl font-bold">
+  <aside className="grid grid-cols-2 font-outfit text-xl font-bold">
     <div className="uppercase">krypto</div>
     <ul className="flex flex-row justify-between">
       <li>
-        <Link href="#">about</Link>
+        <Link>about</Link>
       </li>
       <li>
-        <Link href="#">pricing</Link>
+        <Link>pricing</Link>
       </li>
       <li>
-        <Link href="#">contact</Link>
+        <Link>contact</Link>
       </li>
       <li>
-        <Link href="#">buy nfts</Link>
+        <Link className="rounded-full bg-lavenderBlue px-6 py-2 after:content-none">
+          buy nfts
+        </Link>
       </li>
     </ul>
   </aside>
@@ -217,7 +223,7 @@ const Testimonials = () => {
 };
 
 const CallToAction = () => (
-  <section className="rounded-3xl bg-gradient-to-br from-[#8080D7] to-[#AAD9D9] p-16 text-center">
+  <section className={`rounded-3xl p-16 text-center ${GRADIENT}`}>
     <div className="mx-auto w-1/2">
       <SubHeading
         text="are you ready?"
@@ -230,6 +236,85 @@ const CallToAction = () => (
       <Button className="mt-8 w-full bg-black">get started</Button>
     </div>
   </section>
+);
+
+const Footer = () => (
+  <footer className="grid grid-cols-6 items-center gap-y-4 text-base">
+    <span className="font-outfit text-xl font-semibold uppercase">krypto</span>
+    <span className="font-outfit text-xl font-semibold">links</span>
+    <span className="font-outfit text-xl font-semibold">market</span>
+    <span className="font-outfit text-xl font-semibold">contact</span>
+    <span className="col-span-2 font-outfit text-xl font-semibold">
+      join our newsletter
+    </span>
+    <ul>
+      <li>
+        <Link>Privacy Policy</Link>
+      </li>
+      <li>
+        <Link>Terms of Service</Link>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <Link>Home</Link>
+      </li>
+      <li>
+        <Link>About</Link>
+      </li>
+      <li>
+        <Link>Pricing</Link>
+      </li>
+      <li>
+        <Link>App</Link>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <Link>Browse NFTs</Link>
+      </li>
+      <li>
+        <Link>Buy NFTs</Link>
+      </li>
+      <li>
+        <Link>Sell NFTs</Link>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <Link>Email</Link>
+      </li>
+      <li>
+        <Link>LinkedIn</Link>
+      </li>
+      <li>
+        <Link>Instagram</Link>
+      </li>
+      <li>
+        <Link>Twitter</Link>
+      </li>
+    </ul>
+    <div className="col-span-2 flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6">
+      <div className="relative">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          className="peer bg-transparent text-white"
+          placeholder=" "
+        />
+        <label
+          htmlFor="email"
+          className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80"
+        >
+          Email Address
+        </label>
+      </div>
+      <button className="ml-auto w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
+        submit
+      </button>
+    </div>
+  </footer>
 );
 
 export default Home;

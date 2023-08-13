@@ -1,15 +1,18 @@
 import { twMerge as tw } from "tailwind-merge";
 
 const Link: React.FC<{
-  href: string;
+  href?: string;
   children: React.ReactNode;
   className?: string;
 }> = ({ href, children, className }) => (
   <a
-    href={href}
+    href={href ?? "#"}
     rel="noreferrer"
     target="_blank"
-    className={tw("after:block after:w-0 after:h-[3px] after:bg-white hover:after:w-full after:transition-[width]", className)}
+    className={tw(
+      "after:block after:h-[3px] after:w-0 after:bg-white after:transition-[width] hover:after:w-full",
+      className,
+    )}
   >
     {children}
   </a>
