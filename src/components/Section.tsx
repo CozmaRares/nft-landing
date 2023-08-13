@@ -35,20 +35,20 @@ const InnerSection: React.FC<{
   button: ButtonProps | ReactNode;
 }> = ({ className, heading, subHeading, description, button }) => (
   <div className={tw("space-y-6", className)}>
-    <div>
-      {typeof subHeading != "string" ? (
-        subHeading
-      ) : (
-        <h3 className="font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua">
-          {subHeading}
-        </h3>
-      )}
+    <div className="flex flex-col-reverse">
       {typeof heading != "string" ? (
         heading
       ) : (
         <h2 className="font-outfit text-6xl font-bold capitalize leading-[110%]">
           {heading}
         </h2>
+      )}
+      {typeof subHeading != "string" ? (
+        subHeading
+      ) : (
+        <h3 className="font-outfit text-xl font-semibold uppercase tracking-widest text-paleAqua">
+          {subHeading}
+        </h3>
       )}
     </div>
     {typeof description != "string" ? (

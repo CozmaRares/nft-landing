@@ -16,7 +16,7 @@ import Section from "./components/Section";
 
 const Home = () => {
   return (
-    <div className="bg-midnightBlue text-white">
+    <main className="bg-midnightBlue text-white">
       <div className="mx-auto w-[65vw] space-y-24">
         <Hero />
         <Logos />
@@ -25,7 +25,7 @@ const Home = () => {
         <Support />
         <Testimonials />
       </div>
-    </div>
+    </main>
   );
 };
 
@@ -147,9 +147,9 @@ const Testimonials = () => {
         alt={`${name}'s profile picture`}
         className="mx-auto aspect-square rounded-full"
       />
-      <h4 className="mt-2 mb-4 font-outfit text-xl font-semibold uppercase text-paleAqua">
+      <p className="mt-2 mb-4 font-outfit text-xl font-semibold uppercase text-paleAqua">
         {name}
-      </h4>
+      </p>
       <p>{text}</p>
     </div>
   );
