@@ -10,7 +10,7 @@ const Link: React.FC<{
     rel="noreferrer"
     target="_blank"
     className={tw(
-      "after:block after:h-[3px] after:w-0 after:bg-white after:transition-[width] hover:after:w-full",
+      "inline-block  after:block after:h-[3px] after:w-0 after:bg-white after:transition-[width] hover:after:w-full",
       className,
     )}
   >

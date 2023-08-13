@@ -14,10 +14,10 @@ const Section: React.FC<
     reverse?: boolean;
   } & InferProps<[typeof InnerSection]>
 > = props => (
-  <section className="grid grid-cols-2 items-center">
+  <section className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
     <InnerSection
       {...props}
-      className={tw(props.className, props.reverse ? "order-last" : "")}
+      className={tw(props.className, props.reverse ? "lg:order-last" : "")}
     />
     <div>
       <img
@@ -36,7 +36,7 @@ const InnerSection: React.FC<{
   description: string | ReactNode;
   button: ButtonProps | ReactNode;
 }> = ({ className, heading, subHeading, description, button }) => (
-  <div className={tw("space-y-6", className)}>
+  <div className={tw("w-2/3 space-y-6 lg:w-full", className)}>
     <div className="flex flex-col-reverse">
       {typeof heading != "string" ? heading : <Heading text={heading} />}
       {typeof subHeading != "string" ? (

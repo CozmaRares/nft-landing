@@ -22,7 +22,7 @@ const GRADIENT = "bg-gradient-to-br from-[#8080D7] to-[#AAD9D9]";
 const Home = () => {
   return (
     <main className="bg-midnightBlue text-white">
-      <div className="mx-auto w-[65vw] space-y-24 py-4">
+      <div className="mx-auto  w-[95vw] max-w-[1000px] space-y-24 py-4">
         <NavBar />
         <Hero />
         <Logos />
@@ -68,7 +68,7 @@ const Hero = () => (
     }}
     subHeading={null}
     heading={
-      <h1 className="font-outfit text-7xl font-bold capitalize leading-[110%]">
+      <h1 className="font-outfit text-6xl font-bold capitalize leading-[110%] lg:text-7xl">
         discover and collect <span className="text-lavenderBlue">rare</span>{" "}
         NFTs
       </h1>
@@ -186,7 +186,7 @@ const Testimonials = () => {
   );
 
   return (
-    <section className="text-center">
+    <section className="mx-auto w-3/5 text-center lg:w-full">
       <SubHeading
         text="testimonials"
         className="text-white"
@@ -195,27 +195,21 @@ const Testimonials = () => {
         text="read what others to say"
         className="mb-8"
       />
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid gap-8 lg:grid-cols-3">
         <Card
           picture={pfp1}
-          name={"Olivia Cole"}
-          text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas minima dolor quasi asperiores nulla totam soluta voluptates excepturi, neque obcaecati dolores dicta eum doloribus sed vel? Eveniet possimus ducimus earum!"
-          }
+          name="Olivia Cole"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas minima dolor quasi asperiores nulla totam soluta voluptates excepturi, neque obcaecati dolores dicta eum doloribus sed vel? Eveniet possimus ducimus earum!"
         />
         <Card
           picture={pfp2}
-          name={"Evan White"}
-          text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis exercitationem distinctio voluptate at illum."
-          }
+          name="Evan White"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis exercitationem distinctio voluptate at illum."
         />
         <Card
           picture={pfp3}
-          name={"Jessica Page"}
-          text={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quas explicabo voluptates saepe, culpa quasi optio. Rem id deserunt assumenda!"
-          }
+          name="Jessica Page"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quas explicabo voluptates saepe, culpa quasi optio. Rem id deserunt assumenda!"
         />
       </div>
     </section>
@@ -224,7 +218,7 @@ const Testimonials = () => {
 
 const CallToAction = () => (
   <section className={`rounded-3xl p-16 text-center ${GRADIENT}`}>
-    <div className="mx-auto w-1/2">
+    <div className="mx-auto w-3/5">
       <SubHeading
         text="are you ready?"
         className="text-black"
@@ -300,7 +294,7 @@ const Footer = () => (
           type="email"
           name="email"
           id="email"
-          className="peer bg-transparent text-white"
+          className="peer w-full bg-transparent text-white"
           placeholder=" "
         />
         <label
@@ -310,7 +304,7 @@ const Footer = () => (
           Email Address
         </label>
       </div>
-      <button className="ml-auto w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
+      <button className="w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
         submit
       </button>
     </div>

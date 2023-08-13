@@ -6,7 +6,7 @@ const Heading: React.FC<{ text: string; className?: string }> = ({
 }) => (
   <h2
     className={tw(
-      "font-outfit text-6xl font-bold capitalize leading-[110%]",
+      "font-outfit text-5xl font-bold capitalize leading-[110%] lg:text-6xl",
       className,
     )}
   >
