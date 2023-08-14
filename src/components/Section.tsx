@@ -63,7 +63,7 @@ const InnerSection: React.FC<{
     {typeof description != "string" ? (
       description
     ) : (
-      <p className="mx-auto w-5/6 font-roboto text-xl md:mx-0">{description}</p>
+      <p className="mx-auto w-5/6 text-xl md:mx-0">{description}</p>
     )}
     {isValidElement(button) ? (
       button

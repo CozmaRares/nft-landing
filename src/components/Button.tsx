@@ -6,7 +6,7 @@ const Button: React.FC<ButtonProps> = props => (
   <button
     {...props}
     className={tw(
-      "block rounded-full bg-violetBlue p-4 font-outfit text-xl font-semibold uppercase",
+      "block rounded-full border-[3px] border-violetBlue bg-violetBlue  p-4 font-outfit text-xl font-semibold uppercase transition-colors hover:bg-transparent",
       props.className,
     )}
   />

@@ -23,7 +23,7 @@ const GRADIENT =
 
 const Home = () => {
   return (
-    <main className="overflow-hidden isolate bg-midnightBlue text-white">
+    <main className="isolate overflow-hidden bg-midnightBlue font-roboto text-white">
       <div className="mx-auto w-[95vw] max-w-[1000px] space-y-24 py-4">
         <NavBar />
         <Hero />
@@ -101,7 +101,7 @@ const Hero = () => (
         <div className="grid grid-cols-2 gap-8">
           {" "}
           <Button>buy NFTs</Button>{" "}
-          <Button className="border-violetBlue border-[3px] bg-transparent">
+          <Button className="hover:bg-violetBlue bg-transparent">
             {" "}
             sell NFTs{" "}
           </Button>{" "}
@@ -258,7 +258,9 @@ const CallToAction = () => (
         text="be a part of the next big thing"
         className="capitalize"
       />
-      <Button className="mt-8 w-full bg-black">get started</Button>
+      <Button className="mt-8 w-full border-black bg-black hover:text-black">
+        get started
+      </Button>
     </div>
   </section>
 );
@@ -347,7 +349,7 @@ const Footer = () => {
         span={{ text: "join our newsletter" }}
       >
         <div className="mx-auto flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6 md:mx-0">
-          <div className="relative mr-2">
+          <div className="relative mr-2 [&>*]:p-1">
             <input
               type="email"
               name="email"
@@ -357,14 +359,12 @@ const Footer = () => {
             />
             <label
               htmlFor="email"
-              className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80"
+              className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80 pointer-events-none"
             >
               Email Address
             </label>
           </div>
-          <button className="bg-violetBlue w-1/3 min-w-fit rounded-full p-2 font-bold uppercase">
-            submit
-          </button>
+          <Button className="px-4 py-2 text-base font-bold">submit</Button>
         </div>
       </FooterItem>
       <div className="absolute left-1/2 top-[90%] -z-10 aspect-square w-[200px] -translate-x-1/2 rounded-full bg-white blur-[100px] md:left-[75%] md:top-0 md:translate-x-0"></div>
