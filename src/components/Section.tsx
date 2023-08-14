@@ -23,7 +23,7 @@ const Section: React.FC<
       <img
         src={props.img.src}
         alt={props.img.alt}
-        className="mx-auto max-h-[450px] w-3/5"
+        className="mx-auto max-h-[450px] w-3/5 md:w-auto lg:w-4/5"
       />
     </div>
   </section>

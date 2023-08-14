@@ -1,15 +1,14 @@
-import desktop from "./assets/images/desktop.png";
-import inbox from "./assets/images/inbox.png";
-import phone from "./assets/images/phone.png";
-import servers from "./assets/images/servers.png";
-import pfp1 from "./assets/profile/pfp1.png";
-import pfp2 from "./assets/profile/pfp2.png";
-import pfp3 from "./assets/profile/pfp3.png";
-
-import techCrunch from "./assets/logos/TechCrunch.png";
-import fastCompany from "./assets/logos/Fast Company.png";
-import mit from "./assets/logos/MIT.png";
-import forbes from "./assets/logos/Forbes.png";
+import desktop from "./assets/images/desktop.webp";
+import inbox from "./assets/images/inbox.webp";
+import phone from "./assets/images/phone.webp";
+import servers from "./assets/images/servers.webp";
+import techCrunch from "./assets/logos/TechCrunch.webp";
+import fastCompany from "./assets/logos/Fast-Company.webp";
+import mit from "./assets/logos/MIT.webp";
+import forbes from "./assets/logos/Forbes.webp";
+import pfp1 from "./assets/profile/pfp1.webp";
+import pfp2 from "./assets/profile/pfp2.webp";
+import pfp3 from "./assets/profile/pfp3.webp";
 
 import Button from "./components/Button";
 import Section from "./components/Section";
@@ -52,7 +51,7 @@ const NavBar = () => {
         onClick={() => setIsOpen(prev => !prev)}
       >
         <p>{isOpen ? "Close" : "Open"} Menu</p>
-        <div>
+        <div aria-hidden="true">
           <div className="bar bar1"></div>
           <div className="bar bar2"></div>
           <div className="bar bar3"></div>
@@ -88,8 +87,7 @@ const Hero = () => (
     subHeading={null}
     heading={
       <h1 className="font-outfit text-5xl font-bold capitalize leading-[110%] md:text-6xl lg:text-7xl">
-        discover and collect <span className="text-lavenderBlue">rare</span>{" "}
-        NFTs
+        discover and collect <span className="text-[#8E8EDB]">rare</span> NFTs
       </h1>
     }
     description={
@@ -98,7 +96,7 @@ const Hero = () => (
     button={
       <div className="grid grid-cols-2 gap-8">
         <Button>buy NFTs</Button>
-        <Button className="border-[3px] border-lavenderBlue bg-transparent">
+        <Button className="border-[3px] border-violetBlue bg-transparent">
           sell NFTs
         </Button>
       </div>
@@ -109,7 +107,7 @@ const Hero = () => (
 const Logos = () => (
   <section>
     <p className="pb-2 uppercase">featured on</p>
-    <ul className="flex flex-row justify-between gap-6 rounded-lg bg-lavenderBlue/20 p-8">
+    <ul className="flex flex-row justify-between gap-6 rounded-lg bg-violetBlue/40 p-8">
       <li>
         <img
           src={techCrunch}
@@ -271,7 +269,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="mx-auto grid w-1/2 text-center text-base md:w-full md:grid-cols-6 md:text-left">
+    <footer className="mx-auto grid w-2/3 min-w-fit text-center text-base md:w-full md:grid-cols-6 md:text-left">
       <FooterItem span={{ text: "krypto", className: "uppercase" }}>
         <ul>
           <li>
@@ -350,7 +348,7 @@ const Footer = () => {
               Email Address
             </label>
           </div>
-          <button className="w-1/3 min-w-fit rounded-full bg-lavenderBlue p-2 font-bold uppercase">
+          <button className="w-1/3 min-w-fit rounded-full bg-violetBlue p-2 font-bold uppercase">
             submit
           </button>
         </div>
