@@ -23,7 +23,7 @@ const GRADIENT =
 
 const Home = () => {
   return (
-    <main className="bg-midnightBlue text-white">
+    <main className="overflow-hidden isolate bg-midnightBlue text-white">
       <div className="mx-auto w-[95vw] max-w-[1000px] space-y-24 py-4">
         <NavBar />
         <Hero />
@@ -35,7 +35,7 @@ const Home = () => {
         <CallToAction />
         <Footer />
       </div>
-      <div className={`h-2 ${GRADIENT}`}></div>
+      <div className={`h-2 ${GRADIENT}`} />
     </main>
   );
 };
@@ -44,7 +44,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <aside className="navbar">
+    <aside className="navbar relative">
+      <div className="absolute left-0 top-0 -z-10 aspect-square w-[300px] -translate-y-2/3 rounded-full bg-[#8080D7] blur-[100px]" />
       <div>krypto</div>
       <button
         className={`hamburger-button ${isOpen ? "open" : ""}`}
@@ -52,9 +53,9 @@ const NavBar = () => {
       >
         <p>{isOpen ? "Close" : "Open"} Menu</p>
         <div aria-hidden="true">
-          <div className="bar bar1"></div>
-          <div className="bar bar2"></div>
-          <div className="bar bar3"></div>
+          <div className="bar bar1" />
+          <div className="bar bar2" />
+          <div className="bar bar3" />
         </div>
       </button>
       <ul
@@ -84,30 +85,37 @@ const Hero = () => (
       src: desktop,
       alt: "A desktop displaying the skeleton of an analytics page",
     }}
-    subHeading={null}
-    heading={
-      <h1 className="font-outfit text-5xl font-bold capitalize leading-[110%] md:text-6xl lg:text-7xl">
-        discover and collect <span className="text-[#8E8EDB]">rare</span> NFTs
-      </h1>
-    }
-    description={
-      "The most secure marketplace for buying and selling unique crypto assets."
-    }
-    button={
-      <div className="grid grid-cols-2 gap-8">
-        <Button>buy NFTs</Button>
-        <Button className="border-[3px] border-violetBlue bg-transparent">
-          sell NFTs
-        </Button>
-      </div>
-    }
+    content={{
+      subHeading: null,
+      heading: (
+        <h1 className="font-outfit text-5xl font-bold capitalize leading-[110%] md:text-6xl lg:text-7xl">
+          {" "}
+          discover and collect <span className="text-[#8E8EDB]">
+            rare
+          </span> NFTs{" "}
+        </h1>
+      ),
+      description:
+        "The most secure marketplace for buying and selling unique crypto assets.",
+      button: (
+        <div className="grid grid-cols-2 gap-8">
+          {" "}
+          <Button>buy NFTs</Button>{" "}
+          <Button className="border-violetBlue border-[3px] bg-transparent">
+            {" "}
+            sell NFTs{" "}
+          </Button>{" "}
+        </div>
+      ),
+    }}
   />
 );
 
 const Logos = () => (
-  <section>
+  <section className="relative">
+    <div className="absolute left-[90%] top-0 -z-10 aspect-square w-[200px] -translate-y-2/3 rounded-full bg-[#AAD9D9] blur-[100px]"></div>
     <p className="pb-2 uppercase">featured on</p>
-    <ul className="flex flex-row justify-between gap-6 rounded-lg bg-violetBlue/40 p-8">
+    <ul className="bg-violetBlue/40 flex flex-row justify-between gap-6 rounded-lg p-8">
       <li>
         <img
           src={techCrunch}
@@ -143,12 +151,13 @@ const Analytics = () => (
       alt: "",
     }}
     reverse
-    heading={"built-in analytics to track your nfts"}
-    subHeading={"analytics"}
-    description={
-      "Use our built-in analytics dashboard to pull valuable insights and monitor the value of your Krypto portfolio over time."
-    }
-    button={{ children: "view our pricing", className: "w-2/3" }}
+    content={{
+      heading: "built-in analytics to track your nfts",
+      subHeading: "analytics",
+      description:
+        "Use our built-in analytics dashboard to pull valuable insights and monitor the value of your Krypto portfolio over time.",
+      button: { children: "view our pricing", className: "w-2/3" },
+    }}
   />
 );
 
@@ -158,12 +167,13 @@ const App = () => (
       src: phone,
       alt: "",
     }}
-    heading={"browse nfts from your smartphone "}
-    subHeading={"get our app"}
-    description={
-      "Our Krypto app is the easiest way to keep track of your assets when you're on the go."
-    }
-    button={{ children: "download app", className: "w-2/3" }}
+    content={{
+      heading: "browse nfts from your smartphone",
+      subHeading: "get our app",
+      description:
+        "Our Krypto app is the easiest way to keep track of your assets when you're on the go.",
+      button: { children: "download app", className: "w-2/3" },
+    }}
   />
 );
 
@@ -174,13 +184,17 @@ const Support = () => (
       alt: "",
     }}
     reverse
-    heading={"sell your NFTs from Anywhere at any time"}
-    subHeading={"24/7 access"}
-    description={
-      "With our easy-to-use platform, you can buy or sell assets from anywhere in the world, at any time."
-    }
-    button={{ children: "get started", className: "w-2/3" }}
-  />
+    content={{
+      heading: "sell your NFTs from Anywhere at any time",
+      subHeading: "24/7 access",
+      description:
+        "With our easy-to-use platform, you can buy or sell assets from anywhere in the world, at any time.",
+      button: { children: "get started", className: "w-2/3" },
+    }}
+    className="relative"
+  >
+    <div className="absolute -left-[15%] top-0 -z-10 aspect-square w-[250px] -translate-y-2/3 rounded-full bg-purple-800 blur-[100px]"></div>
+  </Section>
 );
 
 const Testimonials = () => {
@@ -269,7 +283,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="mx-auto grid w-2/3 min-w-fit text-center text-base md:w-full md:grid-cols-6 md:text-left">
+    <footer className="relative mx-auto grid w-2/3 min-w-fit text-center text-base md:w-full md:grid-cols-6 md:text-left">
       <FooterItem span={{ text: "krypto", className: "uppercase" }}>
         <ul>
           <li>
@@ -348,11 +362,12 @@ const Footer = () => {
               Email Address
             </label>
           </div>
-          <button className="w-1/3 min-w-fit rounded-full bg-violetBlue p-2 font-bold uppercase">
+          <button className="bg-violetBlue w-1/3 min-w-fit rounded-full p-2 font-bold uppercase">
             submit
           </button>
         </div>
       </FooterItem>
+      <div className="absolute left-1/2 top-[90%] -z-10 aspect-square w-[200px] -translate-x-1/2 rounded-full bg-white blur-[100px] md:left-[75%] md:top-0 md:translate-x-0"></div>
     </footer>
   );
 };

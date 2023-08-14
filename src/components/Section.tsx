@@ -5,19 +5,28 @@ import Button, { ButtonProps } from "./Button";
 import Heading from "./Heading";
 import SubHeading from "./SubHeading";
 
-const Section: React.FC<
-  {
-    img: {
-      src: string;
-      alt: string;
-    };
-    reverse?: boolean;
-  } & InferProps<[typeof InnerSection]>
-> = props => (
-  <section className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+const Section: React.FC<{
+  img: {
+    src: string;
+    alt: string;
+  };
+  content: InferProps<[typeof InnerSection]>;
+  children?: ReactNode;
+  reverse?: boolean;
+  className?: string;
+}> = props => (
+  <section
+    className={tw(
+      "grid grid-cols-1 items-center gap-8 lg:grid-cols-2",
+      props.className,
+    )}
+  >
     <InnerSection
-      {...props}
-      className={tw(props.className, props.reverse ? "lg:order-last" : "")}
+      {...props.content}
+      className={tw(
+        props.content.className,
+        props.reverse ? "lg:order-last" : "",
+      )}
     />
     <div>
       <img
@@ -26,6 +35,7 @@ const Section: React.FC<
         className="mx-auto max-h-[450px] w-3/5 md:w-auto lg:w-4/5"
       />
     </div>
+    {props.children}
   </section>
 );
 
