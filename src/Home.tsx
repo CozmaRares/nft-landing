@@ -89,22 +89,17 @@ const Hero = () => (
       subHeading: null,
       heading: (
         <h1 className="font-outfit text-5xl font-bold capitalize leading-[110%] md:text-6xl lg:text-7xl">
-          {" "}
-          discover and collect <span className="text-[#8E8EDB]">
-            rare
-          </span> NFTs{" "}
+          discover and collect <span className="text-[#8E8EDB]">rare</span> NFTs
         </h1>
       ),
       description:
         "The most secure marketplace for buying and selling unique crypto assets.",
       button: (
         <div className="grid grid-cols-2 gap-8">
-          {" "}
-          <Button>buy NFTs</Button>{" "}
-          <Button className="hover:bg-violetBlue bg-transparent">
-            {" "}
-            sell NFTs{" "}
-          </Button>{" "}
+          <Button>buy NFTs</Button>
+          <Button className="bg-transparent hover:bg-violetBlue">
+            sell NFTs
+          </Button>
         </div>
       ),
     }}
@@ -115,7 +110,7 @@ const Logos = () => (
   <section className="relative">
     <div className="absolute left-[90%] top-0 -z-10 aspect-square w-[200px] -translate-y-2/3 rounded-full bg-[#AAD9D9] blur-[100px]"></div>
     <p className="pb-2 uppercase">featured on</p>
-    <ul className="bg-violetBlue/40 flex flex-row justify-between gap-6 rounded-lg p-8">
+    <ul className="flex flex-row justify-between gap-6 rounded-lg bg-violetBlue/40 p-8">
       <li>
         <img
           src={techCrunch}
@@ -203,16 +198,24 @@ const Testimonials = () => {
     name,
     text,
   }) => (
-    <div className="rounded-xl bg-darkIndigo p-5">
-      <img
-        src={picture}
-        alt={`${name}'s profile picture`}
-        className="mx-auto aspect-square rounded-full"
-      />
-      <p className="mb-4 mt-2 font-outfit text-xl font-semibold uppercase text-paleAqua">
-        {name}
-      </p>
-      <p>{text}</p>
+    <div className="grid grid-cols-1 grid-rows-[auto,1fr]">
+      <div className="relative isolate">
+        <div className="mx-auto inline-block h-fit w-fit rounded-full bg-darkIndigo ">
+          <img
+            src={picture}
+            alt={`${name}'s profile picture`}
+            className="aspect-square rounded-full mix-blend-luminosity"
+          />
+        </div>
+        <div className="absolute left-0 right-0 top-0 -z-10 h-1/2" />
+        <div className="absolute left-0 right-0 top-1/2 -z-10 h-1/2 rounded-t-xl bg-darkIndigo" />
+      </div>
+      <div className="rounded-b-xl bg-darkIndigo px-5 pb-5">
+        <p className="mb-4 mt-2 font-outfit text-xl font-semibold uppercase text-paleAqua">
+          {name}
+        </p>
+        <p>{text}</p>
+      </div>
     </div>
   );
 
@@ -223,10 +226,10 @@ const Testimonials = () => {
         className="text-white"
       />
       <Heading
-        text="read what others to say"
-        className="mb-8"
+        text="read what others have to say"
+        className="mx-auto mb-8 md:w-3/4 lg:w-auto"
       />
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <Card
           picture={pfp1}
           name="Olivia Cole"
@@ -249,7 +252,7 @@ const Testimonials = () => {
 
 const CallToAction = () => (
   <section className={`rounded-3xl p-8 text-center md:p-16 ${GRADIENT}`}>
-    <div className="mx-auto w-3/5">
+    <div className="mx-auto w-fit md:w-3/5">
       <SubHeading
         text="are you ready?"
         className="text-black"
@@ -348,7 +351,7 @@ const Footer = () => {
         className="border-none md:col-span-2"
         span={{ text: "join our newsletter" }}
       >
-        <div className="mx-auto flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6 md:mx-0">
+        <div className="mx-auto flex flex-row items-center justify-between rounded-full bg-darkIndigo p-2 pl-6 text-sm md:mx-0">
           <div className="relative mr-2 [&>*]:p-1">
             <input
               type="email"
@@ -359,12 +362,12 @@ const Footer = () => {
             />
             <label
               htmlFor="email"
-              className="absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80 pointer-events-none"
+              className="pointer-events-none absolute left-0 top-0 opacity-0 peer-placeholder-shown:opacity-80"
             >
               Email Address
             </label>
           </div>
-          <Button className="px-4 py-2 text-base font-bold">submit</Button>
+          <Button className="py-2 text-sm font-bold lg:px-4">submit</Button>
         </div>
       </FooterItem>
       <div className="absolute left-1/2 top-[90%] -z-10 aspect-square w-[200px] -translate-x-1/2 rounded-full bg-white blur-[100px] md:left-[75%] md:top-0 md:translate-x-0"></div>
