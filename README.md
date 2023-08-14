@@ -1,27 +1,98 @@
-# React + TypeScript + Vite
+# NFT landing page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [Working Demo](https://cozmarares.github.io/nft-landing/)
 
-Currently, two official plugins are available:
+## Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a mock landing page website for an online NFT marketplace. The
+design for this website originated from a [follow-along tutorial](https://youtu.be/HZuk6Wkx_Eg)
+that explains the basics of using Figma as a website design tool. You can find
+the provided [Figma template here](https://www.figma.com/community/file/1105403402122144106),
+and view [my work on this project here](<https://www.figma.com/community/file/1273020894426921074/Flux---Figma-Build-Tutorial-(Starter)-(Community)>).
 
-## Expanding the ESLint configuration
+Technologies used:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- TypeScript: typed JavaScript superset
+- ReactJS: declarative UI library
+- ViteJS: fast build tool
+- TailwindCSS: utility-first CSS framework
+- ESLint: JavaScript linter tool
+- Prettier: code formatter
+- Lighthouse: website performance tool
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Prerequisites
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- nodejs
+
+  Debian/Ubuntu:
+
+  ```sh
+  sudo apt install nodejs
+  ```
+
+- npm
+
+  Debian/Ubuntu:
+
+  ```sh
+  sudo apt install npm
+  ```
+
+- Lighthouse (optional)
+
+  ```sh
+  npm install -g lighthouse
+  ```
+
+### Installation
+
+1. Clone the repo
+
+   ```sh
+   git clone https://github.com/CozmaRares/nft-landing.git
+   ```
+
+2. Install the dependencies
+
+   ```sh
+   npm install
+   ```
+
+3. Start the development server
+
+   ```sh
+   npm run dev
+   ```
+
+4. (optional) Generate Lighthouse report
+
+   ```sh
+   npm run report
+   ```
+
+   > **Note** Runs a bash script under the hood. Make sure your OS can run bash scripts.
+
+   <!-- -->
+
+   > **Note** `report.sh` requires some additional configuration.
+
+5. Build for production
+
+   ```sh
+   npm run build
+   ```
+
+   or build and deploy (configured deploy on GitHub Pages)
+
+   ```sh
+   npm run deploy
+   ```
+
+   > **Note** By default, the deploy script will push to the current `origin`
+   > remote. To change the default behaviour see [this link](https://github.com/tschaub/gh-pages),
+   > or an easier solution would be removing the current `origin` and setting
+   > your own.
+
+## Reflection

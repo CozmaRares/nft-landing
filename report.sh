@@ -1,8 +1,12 @@
 #!/bin/bash
 
-CHROME_PATH="/bin/microsoft-edge-stable"
+# CHANGE ME ########################
+CHROME_PATH="" # path to Chrome/Chromium executable
+####################################
+
+# don't change anything below, or change at your own risk
 current_date=$(date +"%Y-%m-%d-%T")
-port=3000
+port=""
 
 function report(){
     CHROME_PATH=$CHROME_PATH lighthouse "http://localhost:${port}/nft-landing/" --output html --output-path "reports/${current_date}.html" --view --chrome-flags="--headless"
@@ -23,7 +27,8 @@ while getopts 'p:' flag; do
     case "${flag}" in
         p)
             port="${OPTARG}"
-            echo mata
+            report
+            exit
             ;;
         *)
             echo "Unknown flag: ${flag}"
@@ -32,4 +37,4 @@ while getopts 'p:' flag; do
     esac
 done
 
-report
+echo "USAGE: ./report.sh -p <port_number>"
