@@ -52,14 +52,12 @@ const InnerSection: React.FC<{
       className,
     )}
   >
-    <div className="flex flex-col-reverse">
-      {typeof heading != "string" ? heading : <Heading text={heading} />}
-      {typeof subHeading != "string" ? (
-        subHeading
-      ) : (
-        <SubHeading text={subHeading} />
-      )}
-    </div>
+    {typeof subHeading != "string" ? (
+      subHeading
+    ) : (
+      <SubHeading text={subHeading} />
+    )}
+    {typeof heading != "string" ? heading : <Heading text={heading} />}
     {typeof description != "string" ? (
       description
     ) : (

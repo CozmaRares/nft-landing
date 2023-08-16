@@ -4,14 +4,14 @@ const SubHeading: React.FC<{ text: string; className?: string }> = ({
   text,
   className,
 }) => (
-  <h3
+  <p
     className={tw(
       "text-md font-outfit font-semibold uppercase tracking-widest text-paleAqua md:text-xl",
       className,
     )}
   >
     {text}
-  </h3>
+  </p>
 );
 
 export default SubHeading;

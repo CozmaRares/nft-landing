@@ -23,20 +23,22 @@ const GRADIENT =
 
 const Home = () => {
   return (
-    <main className="isolate overflow-hidden bg-midnightBlue font-roboto text-white">
+    <div className="isolate overflow-hidden bg-midnightBlue font-roboto text-white">
       <div className="mx-auto w-[95vw] max-w-[1000px] space-y-24 py-4">
         <NavBar />
-        <Hero />
-        <Logos />
-        <Analytics />
-        <App />
-        <Support />
-        <Testimonials />
-        <CallToAction />
+        <main className="space-y-24 ">
+          <Hero />
+          <Logos />
+          <Analytics />
+          <App />
+          <Support />
+          <Testimonials />
+          <CallToAction />
+        </main>
         <Footer />
       </div>
       <div className={`h-2 ${GRADIENT}`} />
-    </main>
+    </div>
   );
 };
 
@@ -147,7 +149,7 @@ const Analytics = () => (
     }}
     reverse
     content={{
-      heading: "built-in analytics to track your nfts",
+      heading: "built-in analytics to track your NFTs",
       subHeading: "analytics",
       description:
         "Use our built-in analytics dashboard to pull valuable insights and monitor the value of your Krypto portfolio over time.",
@@ -163,7 +165,7 @@ const App = () => (
       alt: "",
     }}
     content={{
-      heading: "browse nfts from your smartphone",
+      heading: "browse NFTs from your smartphone",
       subHeading: "get our app",
       description:
         "Our Krypto app is the easiest way to keep track of your assets when you're on the go.",
