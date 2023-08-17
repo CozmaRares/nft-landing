@@ -9,7 +9,7 @@ current_date=$(date +"%Y-%m-%d-%T")
 port=""
 
 function report(){
-    CHROME_PATH=$CHROME_PATH lighthouse "http://localhost:${port}/nft-landing/" --output html --output-path "reports/${current_date}.html" --view --chrome-flags="--headless"
+    CHROME_PATH=$CHROME_PATH lighthouse "http://localhost:${port}/" --output html --output-path "reports/${current_date}.html" --view --chrome-flags="--headless"
 }
 
 if [ ! -f $CHROME_PATH ]; then 
