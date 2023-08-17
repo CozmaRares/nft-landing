@@ -145,7 +145,7 @@ const Analytics = () => (
   <Section
     img={{
       src: inbox,
-      alt: "",
+      alt: "Inobx full of mail",
     }}
     reverse
     content={{
@@ -162,7 +162,7 @@ const App = () => (
   <Section
     img={{
       src: phone,
-      alt: "",
+      alt: "Phone receives notification",
     }}
     content={{
       heading: "browse NFTs from your smartphone",
@@ -178,7 +178,7 @@ const Support = () => (
   <Section
     img={{
       src: servers,
-      alt: "",
+      alt: "Servers are online",
     }}
     reverse
     content={{
