@@ -4,21 +4,7 @@
 
 ## Project Description
 
-This project is a mock landing page website for an online NFT marketplace. The
-design for this website originated from a [follow-along tutorial](https://youtu.be/HZuk6Wkx_Eg)
-that explains the basics of using Figma as a website design tool. You can find
-the provided [Figma template here](https://www.figma.com/community/file/1105403402122144106),
-and view [my work on this project here](<https://www.figma.com/community/file/1273020894426921074/Flux---Figma-Build-Tutorial-(Starter)-(Community)>).
-
-Technologies used:
-
-- TypeScript: typed JavaScript superset
-- ReactJS: declarative UI library
-- ViteJS: fast build tool
-- TailwindCSS: utility-first CSS framework
-- ESLint: JavaScript linter tool
-- Prettier: code formatter
-- Lighthouse: website performance tool
+A simple landing page for a NFT marketplace.
 
 ## Getting Started
 
@@ -52,6 +38,7 @@ Technologies used:
 
    ```sh
    git clone https://github.com/CozmaRares/nft-landing.git
+   cd nft-landing
    ```
 
 2. Install the dependencies
@@ -66,19 +53,7 @@ Technologies used:
    npm run dev
    ```
 
-4. (optional) Generate Lighthouse report
-
-   ```sh
-   npm run report
-   ```
-
-   > **Note** Runs a bash script under the hood. Make sure your OS can run bash scripts.
-
-   <!-- -->
-
-   > **Note** `report.sh` requires some additional configuration.
-
-5. Build for production
+4. Build for production
 
    ```sh
    npm run build
@@ -90,9 +65,48 @@ Technologies used:
    npm run deploy
    ```
 
-   > **Note** By default, the deploy script will push to the current `origin`
-   > remote. To change the default behaviour see [this link](https://github.com/tschaub/gh-pages),
-   > or an easier solution would be removing the current `origin` and setting
-   > your own.
+   > **Note** By default, the deploy script will push to the current `origin`.
+   > If you cloned this repository, the `origin` will be set to **MY** GitHub
+   > repository. Be sure to remove the `origin` and set it yoursef if you plan on
+   > deploying to GitHub Pages.
+
+    <!---->
+
+   > Remove origin
+   >
+   > ```sh
+   > git remote remove origin
+   > ```
+
+5. (optional) Generate Lighthouse report
+
+   ```sh
+   npm run report
+   ```
+
+   > **Note** Runs a bash script (`report.sh`) under the hood. Make sure your OS
+   > can run bash scripts.
+
+   <!-- -->
+
+   > **Note** `report.sh` requires some additional configuration.
 
 ## Reflection
+
+The objective of this project was to execute the design demonstrated in this
+[step-by-step tutorial](https://youtu.be/HZuk6Wkx_Eg), which provides a
+introduction to utilizing Figma as a tool for website design. You can find
+the provided [Figma template here](https://www.figma.com/community/file/1105403402122144106),
+and view [my work on the design here](<https://www.figma.com/community/file/1273020894426921074/Flux---Figma-Build-Tutorial-(Starter)-(Community)>).
+
+The most demanding aspect revolved around creating a responsive design for the
+website. The difficulty arose from initially implementing the design on larger
+screens. When adding support for the smaller screens, I had to carefully manage
+the changes to prevent breaking the existing design or refactor the code to
+ensure compatibility.
+
+This project's tech stack greatly overlaps with [the previous one](https://github.com/CozmaRares/chess)
+as it also includes `TypeScript`, `ReactJS`, `TailwindCSS`, and `ViteJS`. The
+new additions to the technology stack are `ESLint`, `Prettier`, and `Lighthouse`,
+which collectively ensure code quality through linting, consistent formatting,
+and performance optimization.
