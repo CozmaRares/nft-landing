@@ -100,13 +100,13 @@ the provided [Figma template here](https://www.figma.com/community/file/11054034
 and view [my work on the design here](<https://www.figma.com/community/file/1273020894426921074/Flux---Figma-Build-Tutorial-(Starter)-(Community)>).
 
 The most demanding aspect revolved around creating a responsive design for the
-website. The difficulty arose from initially implementing the design on larger
+website. The difficulty arose from initially implementing the design for larger
 screens. When adding support for the smaller screens, I had to carefully manage
 the changes to prevent breaking the existing design or refactor the code to
 ensure compatibility.
 
 This project's tech stack greatly overlaps with [the previous one](https://github.com/CozmaRares/chess)
-as it also includes `TypeScript`, `ReactJS`, `TailwindCSS`, and `ViteJS`. The
+as it also includes `TypeScript`, `React`, `TailwindCSS`, and `Vite`. The
 new additions to the technology stack are `ESLint`, `Prettier`, and `Lighthouse`,
 which collectively ensure code quality through linting, consistent formatting,
 and performance optimization.
