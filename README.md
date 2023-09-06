@@ -1,6 +1,6 @@
 # NFT landing page
 
-> [Working Demo](https://cozmarares.github.io/nft-landing/)
+> [Working Demo](https://nft-landing.raru.dev/)
 
 ## Project Description
 
@@ -67,8 +67,8 @@ A simple landing page for a NFT marketplace.
 
    > **Note** By default, the deploy script will push to the current `origin`.
    > If you cloned this repository, the `origin` will be set to **MY** GitHub
-   > repository. Be sure to remove the `origin` and set it yoursef if you plan on
-   > deploying to GitHub Pages.
+   > repository and domain. Be sure to remove the `origin` and set it yoursef,
+   > and change the `deploy:domain` script if you plan on deploying to GitHub Pages.
 
     <!---->
 
